@@ -1,0 +1,42 @@
+Ext.define("App.model.Job", {
+    extend: "Ext.data.Model",
+    config: {
+        idProperty: 'id',
+		fields: [
+            { name: 'id', type: 'string' },
+            { name: 'runningReduceAttempts', type: 'string' },
+            { name: 'reduceProgress', type: 'string' },
+            { name: 'failedReduceAttempts', type: 'int' },
+            { name: 'newMapAttempts', type: 'int' },
+            { name: 'mapsRunning', type: 'int' },
+            { name: 'state', type: 'string' },
+            { name: 'successfulReduceAttempts', type: 'string' },
+            { name: 'reducesRunning', type: 'int' },
+            { name: 'reducesPending', type: 'int' },
+            { name: 'user', type: 'string' },
+            { name: 'reducesTotal', type: 'int' },
+            { name: 'mapsCompleted', type: 'int' },
+            { name: 'startTime', type: 'string' },
+            { name: 'successfulMapAttempts', type: 'int' },
+            { name: 'runningMapAttempts', type: 'int' },
+            { name: 'newReduceAttempts', type: 'int' },
+            { name: 'name', type: 'string' },
+            { name: 'mapsPending', type: 'string' },
+            { name: 'elapsedTime', type: 'string' },
+            { name: 'reducesCompleted', type: 'int' },
+            { name: 'mapProgress', type: 'int' },
+            { name: 'diagnostics', type: 'string' },
+            { name: 'failedMapAttempts', type: 'int' },
+            { name: 'killedReduceAttempts', type: 'int' },
+            { name: 'mapsTotal', type: 'int' },
+            { name: 'uberized', type: 'string' },
+            { name: 'killedMapAttempts', type: 'int' },
+            { name: 'finishTime', type: 'int' },
+            { name: 'avgReduceTime', type: 'int' },
+            { name: 'avgMapTime', type: 'string' },
+            { name: 'avgShuffleTime', type: 'string' },
+			{ name: 'avgMergeTime', type: 'string' },
+			{ name: 'queue', type: 'string' }
+		]
+	}
+});

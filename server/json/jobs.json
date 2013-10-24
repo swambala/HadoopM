@@ -1,0 +1,47 @@
+{
+   "jobs" : {
+      "job" : [
+         {
+            "runningReduceAttempts" : 1,
+            "reduceProgress" : 72.104515,
+            "failedReduceAttempts" : 0,
+            "newMapAttempts" : 0,
+            "mapsRunning" : 0,
+            "state" : "RUNNING",
+            "successfulReduceAttempts" : 0,
+            "reducesRunning" : 1,
+            "acls" : [
+               {
+                  "value" : " ",
+                  "name" : "mapreduce.job.acl-modify-job"
+               },
+               {
+                  "value" : " ",
+                  "name" : "mapreduce.job.acl-view-job"
+               }
+            ],
+            "reducesPending" : 0,
+            "user" : "user1",
+            "reducesTotal" : 1,
+            "mapsCompleted" : 1,
+            "startTime" : 1326860720902,
+            "id" : "job_1326821518301_10_10",
+            "successfulMapAttempts" : 1,
+            "runningMapAttempts" : 0,
+            "newReduceAttempts" : 0,
+            "name" : "Sleep job",
+            "mapsPending" : 0,
+            "elapsedTime" : 64432,
+            "reducesCompleted" : 0,
+            "mapProgress" : 100,
+            "diagnostics" : "",
+            "failedMapAttempts" : 0,
+            "killedReduceAttempts" : 0,
+            "mapsTotal" : 1,
+            "uberized" : false,
+            "killedMapAttempts" : 0,
+            "finishTime" : 0
+         }
+      ]
+   }
+}
