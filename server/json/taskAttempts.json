@@ -1,0 +1,23 @@
+{
+   "taskAttempts" : {
+      "taskAttempt" : [
+         {
+            "elapsedMergeTime" : 158,
+            "shuffleFinishTime" : 1326860735378,
+            "assignedContainerId" : "container_1326821518301_0010_01_000003",
+            "progress" : 72.104515,
+            "elapsedTime" : 0,
+            "state" : "RUNNING",
+            "elapsedShuffleTime" : 2394,
+            "mergeFinishTime" : 1326860735536,
+            "rack" : "/10.10.10.0",
+            "elapsedReduceTime" : 0,
+            "nodeHttpAddress" : "host.domain.com:8042",
+            "type" : "REDUCE",
+            "startTime" : 1326860732984,
+            "id" : "attempt_1326821518301_10_10_r_0_0",
+            "finishTime" : 0
+         }
+      ]
+   }
+}

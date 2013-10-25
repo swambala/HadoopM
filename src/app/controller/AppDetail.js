@@ -26,22 +26,37 @@ Ext.define('App.controller.AppDetail', {
 		
 		if(App.app.setHadoopParams.jobId != ''){
 			
-			//Set value for Progress chart
-			var ProgressStore = new Ext.data.JsonStore({
+			//Set value for Reduce Progress chart
+			var jobReduceProgressStore = new Ext.data.JsonStore({
 				fields: ['name', 'value'],
-				data: [{name:0,value:record.data.progress}]
+				data: [{name:0,value:record.data.reduceProgress}]
 			});
-			var appProgress = Ext.getCmp("appProgress");
-			appProgress.setStore(ProgressStore);
-			//Get Jobs of required Application
+			var jobReduceProgress = Ext.getCmp("jobReduceProgress");
+			jobReduceProgress.setStore(jobReduceProgressStore);
+			var jobReduceContent = Ext.getCmp('jobReduceContent');
+			jobReduceContent.setHtml("Reduce Progress : "+Math.round(record.data.reduceProgress)+"%");
+			
+			
+			//Set value for Reduce Progress chart
+			var jobMapProgressStore = new Ext.data.JsonStore({
+				fields: ['name', 'value'],
+				data: [{name:0,value:record.data.mapProgress}]
+			});
+			var jobMapProgress = Ext.getCmp("jobMapProgress");
+			jobMapProgress.setStore(jobMapProgressStore);
+			var jobMapContent = Ext.getCmp('jobMapContent');
+			jobMapContent.setHtml("Map Progress : "+Math.round(record.data.mapProgress)+"%");
+			
+			
+			//Get Tasks of required Job
 			Ext.Ajax.request({
 				//url: base_path+'proxy/'+App.app.setHadoopParams.appId+'/ws/v1/mapreduce/jobs',
-				url: base_path+'json/jobs.json',
+				url: base_path+'json/tasks.json',
 				success: function(response, opts) {
 					var record = Ext.decode(response.responseText);
-					var jobsarray = record.jobs.job;
-					var jobsStore = Ext.getStore("Jobs");
-					jobsStore.add(jobsarray);
+					var tasksarray = record.tasks.task;
+					var tasksStore = Ext.getStore("Tasks");
+					tasksStore.add(tasksarray);
 				},
 				failure: function(response, opts) {
 					console.log('server-side failure with status code ' + response.status);
@@ -49,9 +64,9 @@ Ext.define('App.controller.AppDetail', {
 			});
 			
 			views = me.getViewManager();
-			views.switchTo('appdetail');
+			views.switchTo('jobdetail');
 		}else{
-			Ext.Msg.alert('APPID Required', 'Please Enter Your Application ID', Ext.emptyFn);
+			Ext.Msg.alert('Task ID Required', 'Please Enter Your Task ID', Ext.emptyFn);
 		}
 	}
 	

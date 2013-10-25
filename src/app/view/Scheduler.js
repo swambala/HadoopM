@@ -7,7 +7,7 @@ Ext.define('App.view.Scheduler', {
 			{
 				xtype: "toolbar",
 				docked: "top",
-				title: "Scheduler",
+				title: "Scheduler-Info",
 				items: [
 					 {
                         xtype: "button",

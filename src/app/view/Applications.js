@@ -18,7 +18,7 @@ Ext.define('App.view.Applications', {
 					{ xtype: "spacer" }
 				]
 			},
-			/* {
+			{
 				xtype: 'toolbar',
 				docked: 'top',
 
@@ -27,11 +27,12 @@ Ext.define('App.view.Applications', {
 					{
 						xtype: 'searchfield',
 						placeHolder: 'application ID..',
+						action:'search',
 						
 					},
 					{ xtype: 'spacer' }
 				]
-			}, */
+			},
 			{
 				xtype:'list',
 				store:'Applications',

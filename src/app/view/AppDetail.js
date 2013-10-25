@@ -69,40 +69,7 @@ Ext.define('App.view.AppDetail', {
 								}
 							}
 						]
-					}, 
-					/* {
-						xtype: 'chart',
-						id:'appProgress',
-						style: 'background:#fff',
-						flex: 2,
-						animate: {
-							easing: 'bounceOut',
-							duration: 500
-						},
-						legend: {
-							position: 'bottom',
-							text:'test12'
-						},
-						axes: [{
-							type: 'gauge',
-							position: 'gauge',
-							minimum: 0,
-							maximum: 100,
-							steps: 10,
-							margin: 7
-						}],
-						series: [{
-							type: 'gauge',
-							field: 'value',
-							donut: 80,
-							colorSet: ['#3AA8CB', '#ddd'],
-							showInLegend: true,
-							label: {
-								display: 'none',
-								contrast: true
-							}
-						}]
-					}, */
+					},
 					{
 						xtype: 'list',
 						itemId: 'jobsList',

@@ -18,7 +18,11 @@ Ext.application({
 	
 	models: [
 		'Application',
-		'Job'
+		'Job',
+		'Task',
+		'TaskAttempt',
+		'TaskAttemptCounter',
+		'TaskAttemptCounterGroup'
 	],
 	
 	views: [
@@ -27,7 +31,11 @@ Ext.application({
 		'Metrics',
 		'Scheduler',
 		'Applications',
-		'AppDetail'
+		'AppDetail',
+		'JobDetail',
+		'TaskDetail',
+		'TaskAttemptDetail',
+		'TaskAttemptGroupDetail'
     ],
 	
 	controllers: [
@@ -35,12 +43,20 @@ Ext.application({
 		'Metrics',
 		'Scheduler',
 		'Applications',
-		'AppDetail'
+		'AppDetail',
+		'JobDetail',
+		'TaskDetail',
+		'TaskAttemptDetail',
+		'TaskAttemptGroupDetail'
     ],
 	
 	stores:[
 		'Applications',
-		'Jobs'
+		'Jobs',
+		'Tasks',
+		'TaskAttempts',
+		'TaskAttemptCounters',
+		'TaskAttemptCounterGroups'
     ],
     
 

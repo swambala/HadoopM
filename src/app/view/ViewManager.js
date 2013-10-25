@@ -24,6 +24,18 @@ Ext.define('App.view.ViewManager', {
 		},
 		{
 			xtype:'appdetail'
+		},
+		{
+			xtype:'jobdetail'
+		},
+		{
+			xtype:'taskdetail'
+		},
+		{
+			xtype:'taskattemptdetail'
+		},
+		{
+			xtype:'taskattemptgroupdetail'
 		}
 		]
     },
