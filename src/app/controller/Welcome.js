@@ -28,7 +28,7 @@ Ext.define('App.controller.Welcome', {
 						//if(record.length != 0) {
 							var metricsRecord = record.clusterMetrics;
 							//Generate Metrics Store from response
-							var MetricsStore = new Ext.data.JsonStore({
+							/* var MetricsStore = new Ext.data.JsonStore({
 								fields: ['title','content'],
 								data: [
 									{title:'Applications', content: '<div style="margin:auto;width:60%;text-align: -webkit-center;font-size: 16px;" ><table><tr><td>Submitted </td><td> : </td><td>'+metricsRecord.appsSubmitted+'</td></tr><tr><td>Completed </td><td> : </td><td>'+metricsRecord.appsCompleted+'</td></tr><tr><td>Pending </td><td> : </td><td>'+metricsRecord.appsPending+'</td></tr><tr><td>Running </td><td> : </td><td>'+metricsRecord.appsRunning+'</td></tr><tr><td>Failed </td><td> : </td><td>'+metricsRecord.appsFailed+'</td></tr><tr><td>Killed </td><td> : </td><td>'+metricsRecord.appsKilled+'</td></tr></table></div>'},
@@ -38,7 +38,73 @@ Ext.define('App.controller.Welcome', {
 								]
 							});
 							var metricsinfo = Ext.getCmp("metrics-info");
-							metricsinfo.setStore(MetricsStore);
+							metricsinfo.setStore(MetricsStore); */
+							
+							//Start to set chart for applications
+							var metricsappsinfo = Ext.getCmp("metrics_apps_info");
+							var metricsappsAxes = metricsappsinfo.getAxes();
+							metricsappsAxes.items[0].setMaximum(metricsRecord.appsSubmitted)
+							var MetricsAppsStore = new Ext.data.JsonStore({
+								fields: ['xfield','yvalue'],
+								data: [
+									//{xfield:'Submitted',yvalue:metricsRecord.appsSubmitted},
+									{xfield:'Completed',yvalue:metricsRecord.appsCompleted},
+									{xfield:'Running',yvalue:metricsRecord.appsRunning},
+									{xfield:'Pending',yvalue:metricsRecord.appsPending},
+									{xfield:'Failed',yvalue:metricsRecord.appsFailed},
+									{xfield:'Killed',yvalue:metricsRecord.appsKilled}
+								]
+							});
+							metricsappsinfo.setStore(MetricsAppsStore);
+							//End to set chart for applications
+							
+						    //Start to set chart for nodes
+							var metricsnodesinfo = Ext.getCmp("metrics_nodes_info");
+							var metricsnodesAxes = metricsnodesinfo.getAxes();
+							metricsnodesAxes.items[0].setMaximum(metricsRecord.totalNodes)
+							var MetricsNodesStore = new Ext.data.JsonStore({
+								fields: ['xfield','yvalue'],
+								data: [
+									{xfield:'Reboot',yvalue:metricsRecord.rebootedNodes},
+									{xfield:'Decommission',yvalue:metricsRecord.decommissionedNodes},
+									{xfield:'Active',yvalue:metricsRecord.activeNodes},
+									{xfield:'Unhealthy',yvalue:metricsRecord.unhealthyNodes},
+									{xfield:'Lost',yvalue:metricsRecord.lostNodes}
+								]
+							});
+							metricsnodesinfo.setStore(MetricsNodesStore);
+							//End to set chart for nodes
+							
+							//Start to set chart for spaces
+							var metricsSpacesInfo = Ext.getCmp("metrics_spaces_info");
+							var metricsSpacesAxes = metricsSpacesInfo.getAxes();
+							metricsSpacesAxes.items[0].setMaximum(metricsRecord.totalMB)
+							var MetricsSpacesStore = new Ext.data.JsonStore({
+								fields: ['xfield','yvalue'],
+								data: [
+									{xfield:'Raserved',yvalue:metricsRecord.reservedMB},
+									{xfield:'Allocated',yvalue:metricsRecord.allocatedMB},
+									{xfield:'Available',yvalue:metricsRecord.availableMB}
+								]
+							});
+							metricsSpacesInfo.setStore(MetricsSpacesStore);
+							//End to set chart for spaces
+							
+							//Start to set chart for containers
+							var metricsContainersInfo = Ext.getCmp("metrics_containers_info");
+							var metricsContainersAxes = metricsContainersInfo.getAxes();
+							metricsContainersAxes.items[0].setMaximum(metricsRecord.containersReserved+metricsRecord.containersAllocated+metricsRecord.containersPending)
+							var MetricsContainersStore = new Ext.data.JsonStore({
+								fields: ['xfield','yvalue'],
+								data: [
+									{xfield:'Raserved',yvalue:metricsRecord.containersReserved},
+									{xfield:'Allocated',yvalue:metricsRecord.containersAllocated},
+									{xfield:'Pending',yvalue:metricsRecord.containersPending}
+								]
+							});
+							metricsContainersInfo.setStore(MetricsContainersStore);
+							//End to set chart for containers
+							
 							views.switchTo("metrics");
 						}
 						else {

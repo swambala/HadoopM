@@ -20,25 +20,25 @@
 			case 'metrics':
 				$result = array(
 							"clusterMetrics" => array(
-								"appsSubmitted"=>0,
-								"appsCompleted"=>0,
-								"appsPending"=>0,
-								"appsRunning"=>0,
-								"appsFailed"=>0,
-								"appsKilled"=>0,
-								"reservedMB"=>0,
-								"availableMB"=>17408,
-								"allocatedMB"=>0,
-								"containersAllocated"=>0,
-								"containersReserved"=>0,
-								"containersPending"=>0,
+								"appsSubmitted"=>120,
+								"appsCompleted"=>35,
+								"appsPending"=>30,
+								"appsRunning"=>25,
+								"appsFailed"=>13,
+								"appsKilled"=>17,
+								"reservedMB"=>5000,
+								"availableMB"=>7408,
+								"allocatedMB"=>5000,
+								"containersAllocated"=>20,
+								"containersReserved"=>30,
+								"containersPending"=>10,
 								"totalMB"=>17408,
-								"totalNodes"=>1,
-								"lostNodes"=>0,
-								"unhealthyNodes"=>0,
-								"decommissionedNodes"=>0,
-								"rebootedNodes"=>0,
-								"activeNodes"=>1
+								"totalNodes"=>100,
+								"lostNodes"=>20,
+								"unhealthyNodes"=>10,
+								"decommissionedNodes"=>15,
+								"rebootedNodes"=>25,
+								"activeNodes"=>30
 							)
 						);
 				break;	

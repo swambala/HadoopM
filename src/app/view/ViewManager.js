@@ -17,6 +17,18 @@ Ext.define('App.view.ViewManager', {
             xtype: 'metrics'
         },
 		{
+            xtype: 'metricsapps'
+        },
+		{
+            xtype: 'metricsspaces'
+        },
+		{
+            xtype: 'metricscontainers'
+        },
+		{
+            xtype: 'metricsnodes'
+        },
+		{
 			xtype:'scheduler'
 		},
 		{
