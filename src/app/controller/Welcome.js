@@ -160,6 +160,28 @@ Ext.define('App.controller.Welcome', {
 					}
 				});
 				break;
+			case "nodes":
+				Ext.Ajax.request({
+					//url: base_path+'proxy/'+App.app.setHadoopParams.appId+'/ws/v1/mapreduce/jobs/'+App.app.setHadoopParams.jobId+'/tasks',
+					url: base_path+'json/nodes.json',
+					success: function(response, opts) {
+						//console.log(response.responseText);
+						var record = Ext.decode(response.responseText);
+						if(record.length != 0 && record.nodes !== undefined ) {
+							var nodessarray = record.nodes.node;
+							var nodesStore = Ext.getStore("Nodes");
+							nodesStore.add(nodessarray);
+							views.switchTo("nodes");	
+						}		
+						else {
+							Ext.Msg.alert('Error', 'There is some error in collecting data', Ext.emptyFn);
+						}
+					},
+					failure: function(response, opts) {
+						console.log('server-side failure with status code ' + response.status);
+					}
+				});
+				break;
 		}
 		Ext.Viewport.setMasked(false);
 		

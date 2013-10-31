@@ -22,7 +22,8 @@ Ext.application({
 		'Task',
 		'TaskAttempt',
 		'TaskAttemptCounter',
-		'TaskAttemptCounterGroup'
+		'TaskAttemptCounterGroup',
+		'Node'
 	],
 	
 	views: [
@@ -39,7 +40,8 @@ Ext.application({
 		'JobDetail',
 		'TaskDetail',
 		'TaskAttemptDetail',
-		'TaskAttemptGroupDetail'
+		'TaskAttemptGroupDetail',
+		'Nodes'
     ],
 	
 	controllers: [
@@ -55,7 +57,8 @@ Ext.application({
 		'JobDetail',
 		'TaskDetail',
 		'TaskAttemptDetail',
-		'TaskAttemptGroupDetail'
+		'TaskAttemptGroupDetail',
+		'Nodes'
     ],
 	
 	stores:[
@@ -64,7 +67,8 @@ Ext.application({
 		'Tasks',
 		'TaskAttempts',
 		'TaskAttemptCounters',
-		'TaskAttemptCounterGroups'
+		'TaskAttemptCounterGroups',
+		'Nodes'
     ],
     
 

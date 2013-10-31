@@ -48,6 +48,9 @@ Ext.define('App.view.ViewManager', {
 		},
 		{
 			xtype:'taskattemptgroupdetail'
+		},
+		{
+			xtype:'nodes'
 		}
 		]
     },
